@@ -1,6 +1,6 @@
+:toc: macro 
 = The Dangerous and Thrilling Documentation Chronicles
 Kismet Chameleon
-:toc: macro 
 
 This journey begins on a bleary...
 
