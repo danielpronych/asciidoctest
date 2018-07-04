@@ -11,7 +11,7 @@
 <p><strong>sr_subscribe</strong> foreground|start|stop|restart|reload|sanity|status configfile</p>
 <p><strong>sr_subscribe</strong> cleanup|declare|setup|disable|enable|list|add|remove configfile</p>
 <h1 id="description">DESCRIPTION</h1>
-<p>[ <code>version francaise &lt;fr/sr_subscribe.1.md&gt;</code>_ ]</p>
+<p>[ <code>version francaise &amp;lt;fr/sr_subscribe.1.mdgt;</code>_ ]</p>
 <div class="toc"><span class="toctitle">Contents</span><ul>
 <li><a href="#select-and-conditionally-download-posted-files">Select and Conditionally Download Posted Files</a></li>
 <li><a href="#synopsis">SYNOPSIS</a></li>
@@ -44,11 +44,11 @@
 </ul>
 </li>
 <li><a href="#posting-options">POSTING OPTIONS</a><ul>
-<li><a href="#-blocksize-default-0-auto">[--blocksize <value>] (default: 0 (auto))</a></li>
-<li><a href="#-pbd-post_base_dir-optional">[-pbd|--post_base_dir <path>] (optional)</a></li>
-<li><a href="#post_url-mandatory">post_url <url> (MANDATORY)</a></li>
-<li><a href="#post_exchange-default-xpublic">post_exchange <name> (default: xpublic)</a></li>
-<li><a href="#post_exchange_split-default-0">post_exchange_split   <number>   (default: 0)</a></li>
+<li><a href="#-blocksize-valuegt-default-0-auto">[--blocksize &lt;valuegt;] (default: 0 (auto))</a></li>
+<li><a href="#-pbd-post_base_dir-pathgt-optional">[-pbd|--post_base_dir &lt;pathgt;] (optional)</a></li>
+<li><a href="#post_url-urlgt-mandatory">post_url &lt;urlgt; (MANDATORY)</a></li>
+<li><a href="#post_exchange-namegt-default-xpublic">post_exchange &lt;namegt; (default: xpublic)</a></li>
+<li><a href="#post_exchange_split-numbergt-default-0">post_exchange_split   &lt;numbergt;   (default: 0)</a></li>
 <li><a href="#remote-configurations">Remote Configurations</a></li>
 </ul>
 </li>
@@ -67,8 +67,8 @@
 <li><a href="#configuration-files">CONFIGURATION FILES</a></li>
 <li><a href="#see-also">SEE ALSO</a></li>
 <li><a href="#sundew-compatibility-options">SUNDEW COMPATIBILITY OPTIONS</a><ul>
-<li><a href="#destfn_script-defaultnone">destfn_script &lt;script&gt; (default:None)</a></li>
-<li><a href="#filename-defaultwhatfn">filename <keyword> (default:WHATFN)</a></li>
+<li><a href="#destfn_script-scriptgt-defaultnone">destfn_script &lt;scriptgt; (default:None)</a></li>
+<li><a href="#filename-keywordgt-defaultwhatfn">filename &lt;keywordgt; (default:WHATFN)</a></li>
 <li><a href="#field-replacements">Field Replacements</a></li>
 <li><a href="#deprecated-settings">DEPRECATED SETTINGS</a></li>
 </ul>
@@ -80,7 +80,7 @@
 </ul>
 </div>
 <p>Sr_subscribe is a program to download files from websites or file servers 
-that provide <code>sr_post(7) &lt;sr_post.7.md&gt;</code>_ protocol notifications.  Such sites 
+that provide <code>sr_post(7) &amp;lt;sr_post.7.mdgt;</code>_ protocol notifications.  Such sites 
 publish messages for each file as soon as it is available.  Clients connect to a
 <em>broker</em> (often the same as the server itself) and subscribe to the notifications.
 The <em>sr_post</em> notifications provide true push notices for web-accessible folders (WAF),
@@ -93,14 +93,14 @@ suppress the download behaviour and only post the URL on standard output.  The s
 output can be piped to other processes in classic UNIX text filter style.  </p>
 <p>Sr_subscribe is very configurable and is the basis for other components of sarracenia:</p>
 <ul>
-<li><code>sr_report(1) &lt;sr_report.1.md&gt;</code>_ - process report messages.</li>
-<li><code>sr_sender(1) &lt;sr_sender.1.md&gt;</code>_ - copy messages, only, not files.</li>
-<li><code>sr_winnow(8) &lt;sr_winnow.8.md&gt;</code>_ - suppress duplicates.</li>
-<li><code>sr_shovel(8) &lt;sr_shovel.8.md&gt;</code>_ - copy messages, only, not files.</li>
-<li><code>sr_sarra(8) &lt;sr_sarra.8.md&gt;</code>_ -   Subscribe, Acquire, and Recursival ReAdvertise Ad nauseam.</li>
+<li><code>sr_report(1) &amp;lt;sr_report.1.mdgt;</code>_ - process report messages.</li>
+<li><code>sr_sender(1) &amp;lt;sr_sender.1.mdgt;</code>_ - copy messages, only, not files.</li>
+<li><code>sr_winnow(8) &amp;lt;sr_winnow.8.mdgt;</code>_ - suppress duplicates.</li>
+<li><code>sr_shovel(8) &amp;lt;sr_shovel.8.mdgt;</code>_ - copy messages, only, not files.</li>
+<li><code>sr_sarra(8) &amp;lt;sr_sarra.8.mdgt;</code>_ -   Subscribe, Acquire, and Recursival ReAdvertise Ad nauseam.</li>
 </ul>
 <p>All of these components accept the same options, with the same effects.
-There is also <code>sr_cpump(1) &lt;sr_cpump.1.md&gt;</code>_ which is a C version that implements a
+There is also <code>sr_cpump(1) &amp;lt;sr_cpump.1.mdgt;</code>_ which is a C version that implements a
 subset of the options here, but where they are implemented, they have the same effect.</p>
 <p>The <strong>sr_subscribe</strong> command takes two arguments: an action start|stop|restart|reload|status, 
 followed by an a configuration file. </p>
@@ -132,12 +132,12 @@ the dd configuration as a single foreground instance.</p>
 <p>The <strong>foreground</strong> action is used when building a configuration or for debugging.
 The <strong>foreground</strong> instance will run regardless of other instances which are currently
 running.  Should instances be running, it shares the same message queue with them.
-A user stop the <strong>foreground</strong> instance by simply using <ctrl-c> on linux
+A user stop the <strong>foreground</strong> instance by simply using &lt;ctrl-cgt; on linux
 or use other means to kill the process.</p>
 <p>The actions <strong>cleanup</strong>, <strong>declare</strong>, <strong>setup</strong> can be used to manage resources on
 the rabbitmq server. The resources are either queues or exchanges. <strong>declare</strong> creates
 the resources. <strong>setup</strong> creates and additionally binds the queues.</p>
-<p>The <strong>add, remove, list, edit, enable &amp; disable</strong> actions are used to manage the list 
+<p>The <strong>add, remove, list, edit, enable &amp;amp disable</strong> actions are used to manage the list 
 of configurations.  One can see all of the configurations available using the <strong>list</strong>
 action.  using the <strong>edit</strong> option, one can work on a particular configuarion.
 A <em>disabled</em> configuration will not be started or restarted by the <strong>start</strong>,<br />
@@ -149,24 +149,24 @@ new users will find the guides provide more helpful examples and walk
 throughs and should start with them.</p>
 <p>users:</p>
 <ul>
-<li><code>Installation &lt;Install.md&gt;</code>_ - initial installation.</li>
-<li><code>Subscriber Guide &lt;subscriber.md&gt;</code>_ - effective downloading from a pump.</li>
-<li><code>Source Guide &lt;source.md&gt;</code>_ - effective uploading to a pump</li>
-<li><code>Programming Guide &lt;Prog.md&gt;</code>_ - Programming custom plugins for workflow integration.</li>
+<li><code>Installation &amp;lt;Install.mdgt;</code>_ - initial installation.</li>
+<li><code>Subscriber Guide &amp;lt;subscriber.mdgt;</code>_ - effective downloading from a pump.</li>
+<li><code>Source Guide &amp;lt;source.mdgt;</code>_ - effective uploading to a pump</li>
+<li><code>Programming Guide &amp;lt;Prog.mdgt;</code>_ - Programming custom plugins for workflow integration.</li>
 </ul>
 <p>Administrators:</p>
 <ul>
-<li><code>Admin Guide &lt;Admin.md&gt;</code>_ - Configuration of Pumps</li>
-<li><code>Upgrade Guide &lt;UPGRADING.md&gt;</code>_ - MUST READ when upgrading pumps.</li>
+<li><code>Admin Guide &amp;lt;Admin.mdgt;</code>_ - Configuration of Pumps</li>
+<li><code>Upgrade Guide &amp;lt;UPGRADING.mdgt;</code>_ - MUST READ when upgrading pumps.</li>
 </ul>
 <p>contributors:</p>
 <ul>
-<li><code>Developer Guide &lt;Dev.md&gt;</code>_ - contributing to sarracenia development.</li>
+<li><code>Developer Guide &amp;lt;Dev.mdgt;</code>_ - contributing to sarracenia development.</li>
 </ul>
 <p>meta:</p>
 <ul>
-<li><code>Overview &lt;sarra.md&gt;</code>_ - Introduction.</li>
-<li><code>Concepts &lt;Concepts.md&gt;</code>_ - Concepts and Glossary</li>
+<li><code>Overview &amp;lt;sarra.mdgt;</code>_ - Introduction.</li>
+<li><code>Concepts &amp;lt;Concepts.mdgt;</code>_ - Concepts and Glossary</li>
 </ul>
 <p>There are also other manual pages available here: <code>See Also</code>_</p>
 <p>Some quick hints are also available When the command line is invoked with 
@@ -214,7 +214,7 @@ Once satisfied, one can start the the configuration running::</p>
 <p>What goes into the files? See next section:</p>
 <h2 id="option-syntax">Option Syntax</h2>
 <p>Options are placed in configuration files, one per line, in the form:</p>
-<p><strong>option <value></strong></p>
+<p><strong>option &lt;valuegt;</strong></p>
 <p>For example::</p>
 <p><strong>debug true</strong>
   <strong>debug</strong></p>
@@ -245,9 +245,9 @@ long form <em>--url</em>. One can also specify this option in a configuration fi
 To do so, use the long form without the '--', and put its value separated by a space.
 The following are all equivalent:</p>
 <ul>
-<li><strong>url <url></strong></li>
-<li><strong>-u <url></strong></li>
-<li><strong>--url <url></strong></li>
+<li><strong>url &lt;urlgt;</strong></li>
+<li><strong>-u &lt;urlgt;</strong></li>
+<li><strong>--url &lt;urlgt;</strong></li>
 </ul>
 <p>Settings in an individual .conf file are read in after the default.conf
 file, and so can override defaults.   Options specified on
@@ -269,7 +269,7 @@ so the reject has no effect.</p>
 <p>Several options that need to be reused in different config file can be grouped in a file.
 In each config where the options subset should appear, the user would then use :</p>
 <ul>
-<li><strong>--include <includeConfigPath></strong></li>
+<li><strong>--include &lt;includeConfigPathgt;</strong></li>
 </ul>
 <p>The includeConfigPath would normally reside under the same config dir of its
 master configs. There is no restriction, any option can be placed in a config file
@@ -310,7 +310,7 @@ in the credentials file::</p>
 a matching entry in credentials.conf.
 The broker option sets all the credential information to connect to the  <strong>RabbitMQ</strong> server </p>
 <ul>
-<li><strong>broker amqp{s}://<user>:<pw>@<brokerhost>[:port]/<vhost></strong></li>
+<li><strong>broker amqp{s}://&lt;usergt;:&lt;pwgt;@&lt;brokerhostgt;[:port]/&lt;vhostgt;</strong></li>
 </ul>
 <p>::</p>
 <pre><code>  (default: amqp://anonymous:anonymous@dd.weather.gc.ca/ )
@@ -352,9 +352,9 @@ up in credentials.conf.</p>
  The next to last password is:  <strong>De:olonize</strong>. ( %3a being the url encoded value for a colon character. )</p>
 <h1 id="consumer">CONSUMER</h1>
 <p>Most Metpx Sarracenia components loop on reception and consumption of sarracenia 
-AMQP messages.  Usually, the messages of interest are <code>sr_post(7) &lt;sr_post.7.md&gt;</code><em> 
+AMQP messages.  Usually, the messages of interest are <code>sr_post(7) &amp;lt;sr_post.7.mdgt;</code><em> 
 messages, announcing the availability of a file by publishing it��s URL ( or a part 
-of a file ), but there are also <code>sr_report(7) &lt;sr_report.7.md&gt;</code></em> messages which 
+of a file ), but there are also <code>sr_report(7) &amp;lt;sr_report.7.mdgt;</code></em> messages which 
 can be processed using the same tools. AMQP messages are published to an exchange 
 on a broker (AMQP server.) The exchange delivers messages to queues. To receive 
 messages, one must provide the credentials to connect to the broker (AMQP message 
@@ -367,10 +367,10 @@ After a message passes this selection process, and other internal validation, th
 component can run an <strong>on_message</strong> plugin script to perform additional message 
 processing. If this plugin returns False, the message is discarded. If True, 
 processing continues.</p>
-<p>The following sections explains all the options to set this "consuming" part of
+<p>The following sections explains all the options to set this &quot;consuming&quot; part of
 sarracenia programs.</p>
 <h2 id="setting-the-broker">Setting the Broker</h2>
-<p><strong>broker amqp{s}://<user>:<password>@<brokerhost>[:port]/<vhost></strong></p>
+<p><strong>broker amqp{s}://&lt;usergt;:&lt;passwordgt;@&lt;brokerhostgt;[:port]/&lt;vhostgt;</strong></p>
 <p>An AMQP URI is used to configure a connection to a message pump (aka AMQP broker.)
 Some sarracenia components set a reasonable default for that option. 
 You provide the normal user,host,port of connections. In most configuration files,
@@ -379,7 +379,7 @@ the password is missing. The password is normally only included in the credentia
 <p>for more info on the AMQP URI format: ( https://www.rabbitmq.com/uri-spec.html )</p>
 <p>either in the default.conf or each specific configuration file.
 The broker option tell each component which broker to contact.</p>
-<p><strong>broker amqp{s}://<user>:<pw>@<brokerhost>[:port]/<vhost></strong></p>
+<p><strong>broker amqp{s}://&lt;usergt;:&lt;pwgt;@&lt;brokerhostgt;[:port]/&lt;vhostgt;</strong></p>
 <p>::
       (default: None and it is mandatory to set it ) </p>
 <p>Once connected to an AMQP broker, the user needs to bind a queue
@@ -388,32 +388,32 @@ to exchanges and topics to determine the messages of interest.</p>
 <p>Once connected to an AMQP broker, the user needs to create a queue.</p>
 <p>Setting the queue on broker :</p>
 <ul>
-<li><strong>queue_name    <name>         (default: q_<brokerUser>.<programName>.<configName>)</strong></li>
-<li><strong>durable       <boolean>      (default: False)</strong></li>
-<li><strong>expire        <duration>      (default: 5m  == five minutes. RECOMMEND OVERRIDING)</strong></li>
-<li><strong>message-ttl   <duration>      (default: None)</strong></li>
-<li><strong>prefetch      <N>            (default: 1)</strong></li>
-<li><strong>reset         <boolean>      (default: False)</strong></li>
-<li><strong>restore       <boolean>      (default: False)</strong></li>
-<li><strong>restore_to_queue <queuename> (default: None)</strong></li>
-<li><strong>save          <boolean>      (default: False)</strong></li>
+<li><strong>queue_name    &lt;namegt;         (default: q_&lt;brokerUsergt;.&lt;programNamegt;.&lt;configNamegt;)</strong></li>
+<li><strong>durable       &lt;booleangt;      (default: False)</strong></li>
+<li><strong>expire        &lt;durationgt;      (default: 5m  == five minutes. RECOMMEND OVERRIDING)</strong></li>
+<li><strong>message-ttl   &lt;durationgt;      (default: None)</strong></li>
+<li><strong>prefetch      &lt;Ngt;            (default: 1)</strong></li>
+<li><strong>reset         &lt;booleangt;      (default: False)</strong></li>
+<li><strong>restore       &lt;booleangt;      (default: False)</strong></li>
+<li><strong>restore_to_queue &lt;queuenamegt; (default: None)</strong></li>
+<li><strong>save          &lt;booleangt;      (default: False)</strong></li>
 </ul>
 <p>Usually components guess reasonable defaults for all these values
 and users do not need to set them.  For less usual cases, the user
 may need to override the defaults.  The queue is where the notifications
 are held on the server for each subscriber.</p>
-<p>[ queue_name|qn <name>]
+<p>[ queue_name|qn &lt;namegt;]
 ~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>By default, components create a queue name that should be unique. The default queue_name
-components create follows :  <strong>q_<brokerUser>.<programName>.<configName></strong> .
-Users can override the defaul provided that it starts with <strong>q_<brokerUser></strong>.
+components create follows :  <strong>q_&lt;brokerUsergt;.&lt;programNamegt;.&lt;configNamegt;</strong> .
+Users can override the defaul provided that it starts with <strong>q_&lt;brokerUsergt;</strong>.
 Some variables can also be used within the queue_name like
 <strong>${BROKER_USER},${PROGRAM},${CONFIG},${HOSTNAME}</strong></p>
-<p>durable <boolean> (default: False)
+<p>durable &lt;booleangt; (default: False)
 -~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The  <strong>durable</strong> option, if set to True, means writes the queue
 on disk if the broker is restarted.</p>
-<p>expire <duration> (default: 5m  == five minutes. RECOMMEND OVERRIDING)
+<p>expire &lt;durationgt; (default: 5m  == five minutes. RECOMMEND OVERRIDING)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The  <strong>expire</strong>  option is expressed as a duration... it sets how long should live
 a queue without connections. A raw integer is expressed in seconds, if the suffix m,h.d,w
@@ -425,11 +425,11 @@ the subscriber is expected to shutdown, and not suffer data loss.</p>
 The default is set low because it defines how long resources on the broker will be assigned,
 and in early use (when default was 1 week) brokers would often get overloaded with very 
 long queues for left-over experiments.  </p>
-<p>message-ttl <duration>  (default: None)
+<p>message-ttl &lt;durationgt;  (default: None)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The  <strong>message-ttl</strong>  option set the time a message can live in the queue.
 Past that time, the message is taken out of the queue by the broker.</p>
-<p>prefetch <N> (default: 1)
+<p>prefetch &lt;Ngt; (default: 1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The <strong>prefetch</strong> option sets the number of messages to fetch at one time.
 When multiple instances are running and prefetch is 4, each instance will obtain upto four
@@ -437,7 +437,7 @@ messages at a time.  To minimize the number of messages lost if an instance dies
 optimal load sharing, the prefetch should be set as low as possible.  However, over long
 haul links, it is necessary to raise this number, to hide round-trip latency, so a setting
 of 10 or more may be needed.</p>
-<p>reset <boolean> (default: False)
+<p>reset &lt;booleangt; (default: False)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>When <strong>reset</strong> is set, and a component is (re)started, its queue is
 deleted (if it already exists) and recreated according to the component's
@@ -468,19 +468,19 @@ message (but developers can override it with the <strong>topic_prefix</strong>
 option.)</p>
 <p>These options define which messages (URL notifications) the program receives:</p>
 <ul>
-<li><strong>exchange      <name>         (default: xpublic)</strong> </li>
-<li><strong>exchange_suffix      <name>  (default: None)</strong> </li>
-<li><strong>topic_prefix  <amqp pattern> (default: v02.post -- developer option)</strong> </li>
-<li><strong>subtopic      <amqp pattern> (subtopic need to be set)</strong> </li>
+<li><strong>exchange      &lt;namegt;         (default: xpublic)</strong> </li>
+<li><strong>exchange_suffix      &lt;namegt;  (default: None)</strong> </li>
+<li><strong>topic_prefix  &lt;amqp patterngt; (default: v02.post -- developer option)</strong> </li>
+<li><strong>subtopic      &lt;amqp patterngt; (subtopic need to be set)</strong> </li>
 </ul>
-<p>exchange <name> (default: xpublic) and exchange_suffix
+<p>exchange &lt;namegt; (default: xpublic) and exchange_suffix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The convention on data pumps is to use the <em>xpublic</em> exchange. Users can establish
 private data flow for their own processing. Users can declare their own exchanges
-that always begin with <em>xs_<username></em>, so to save having to specify that each
+that always begin with <em>xs_&lt;usernamegt;</em>, so to save having to specify that each
 time, one can just set <em>exchange_suffix kk</em> which will result in the exchange
-being set to <em>xs_<username>_kk</em> (overriding the <em>xpublic</em> default.) </p>
-<p>subtopic <amqp pattern> (subtopic need to be set)
+being set to <em>xs_&lt;usernamegt;_kk</em> (overriding the <em>xpublic</em> default.) </p>
+<p>subtopic &lt;amqp patterngt; (subtopic need to be set)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>Several topic options may be declared. To give a correct value to the subtopic,
 one has the choice of filtering using <strong>subtopic</strong> with only AMQP's limited wildcarding and
@@ -550,9 +550,9 @@ variety of matching possible with regular expressions:</p>
 <p>accept, reject and accept_unmatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <ul>
-<li><strong>accept    <regexp pattern> (optional)</strong></li>
-<li><strong>reject    <regexp pattern> (optional)</strong></li>
-<li><strong>accept_unmatch   <boolean> (default: False)</strong></li>
+<li><strong>accept    &lt;regexp patterngt; (optional)</strong></li>
+<li><strong>reject    &lt;regexp patterngt; (optional)</strong></li>
+<li><strong>accept_unmatch   &lt;booleangt; (default: False)</strong></li>
 </ul>
 <p>The  <strong>accept</strong>  and  <strong>reject</strong>  options process regular expressions (regexp).
 The regexp is applied to the the message's URL for a match.</p>
@@ -583,35 +583,35 @@ to apply the directives follow:</p>
 <p>These options set what files the user wants and where it will be placed,
 and under which name.</p>
 <ul>
-<li><strong>accept    <regexp pattern> (must be set)</strong> </li>
-<li><strong>accept_unmatch   <boolean> (default: off)</strong></li>
-<li><strong>attempts     <count>          (default: 3)</strong></li>
-<li><strong>batch     <count>          (default: 100)</strong></li>
-<li><strong>default_mode     <octalint>       (default: 0 - umask)</strong></li>
-<li><strong>default_dir_mode <octalint>       (default: 0755)</strong></li>
-<li><strong>delete    <boolean>&gt;       (default: off)</strong></li>
-<li><strong>directory <path>           (default: .)</strong> </li>
-<li><strong>discard   <boolean>        (default: off)</strong></li>
-<li><strong>base_dir <path>       (default: /)</strong></li>
-<li><strong>flatten   <string>         (default: '/')</strong> </li>
-<li><strong>heartbeat <count>                 (default: 300 seconds)</strong></li>
-<li><strong>inplace       <boolean>        (default: On)</strong></li>
-<li><strong>kbytes_ps <count>               (default: 0)</strong></li>
-<li><strong>inflight  <string>         (default: .tmp or NONE if post_broker set)</strong> </li>
-<li><strong>mirror    <boolean>        (default: off)</strong> </li>
-<li><strong>no_download|notify_only    <boolean>        (default: off)</strong> </li>
+<li><strong>accept    &lt;regexp patterngt; (must be set)</strong> </li>
+<li><strong>accept_unmatch   &lt;booleangt; (default: off)</strong></li>
+<li><strong>attempts     &lt;countgt;          (default: 3)</strong></li>
+<li><strong>batch     &lt;countgt;          (default: 100)</strong></li>
+<li><strong>default_mode     &lt;octalintgt;       (default: 0 - umask)</strong></li>
+<li><strong>default_dir_mode &lt;octalintgt;       (default: 0755)</strong></li>
+<li><strong>delete    &lt;booleangt;gt;       (default: off)</strong></li>
+<li><strong>directory &lt;pathgt;           (default: .)</strong> </li>
+<li><strong>discard   &lt;booleangt;        (default: off)</strong></li>
+<li><strong>base_dir &lt;pathgt;       (default: /)</strong></li>
+<li><strong>flatten   &lt;stringgt;         (default: '/')</strong> </li>
+<li><strong>heartbeat &lt;countgt;                 (default: 300 seconds)</strong></li>
+<li><strong>inplace       &lt;booleangt;        (default: On)</strong></li>
+<li><strong>kbytes_ps &lt;countgt;               (default: 0)</strong></li>
+<li><strong>inflight  &lt;stringgt;         (default: .tmp or NONE if post_broker set)</strong> </li>
+<li><strong>mirror    &lt;booleangt;        (default: off)</strong> </li>
+<li><strong>no_download|notify_only    &lt;booleangt;        (default: off)</strong> </li>
 <li><strong>outlet    post|json|url    (default: post)</strong> </li>
-<li><strong>overwrite <boolean>        (default: off)</strong> </li>
-<li><strong>recompute_chksum <boolean> (default: off)</strong></li>
-<li><strong>reject    <regexp pattern> (optional)</strong> </li>
-<li><strong>retry    <boolean>         (default: On)</strong> </li>
-<li><strong>retry_ttl    <duration>         (default: same as expire)</strong> </li>
-<li><strong>source_from_exchange  <boolean> (default: off)</strong></li>
-<li><strong>strip     <count|regexp>   (default: 0)</strong></li>
-<li><strong>suppress_duplicates   <off|on|999>     (default: off)</strong></li>
-<li><strong>timeout     <float>         (default: 0)</strong></li>
+<li><strong>overwrite &lt;booleangt;        (default: off)</strong> </li>
+<li><strong>recompute_chksum &lt;booleangt; (default: off)</strong></li>
+<li><strong>reject    &lt;regexp patterngt; (optional)</strong> </li>
+<li><strong>retry    &lt;booleangt;         (default: On)</strong> </li>
+<li><strong>retry_ttl    &lt;durationgt;         (default: same as expire)</strong> </li>
+<li><strong>source_from_exchange  &lt;booleangt; (default: off)</strong></li>
+<li><strong>strip     &lt;count|regexpgt;   (default: 0)</strong></li>
+<li><strong>suppress_duplicates   &lt;off|on|999gt;     (default: off)</strong></li>
+<li><strong>timeout     &lt;floatgt;         (default: 0)</strong></li>
 </ul>
-<p>attempts <count> (default: 3)
+<p>attempts &lt;countgt; (default: 3)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The <strong>attempts</strong> option indicates how many times to 
 attempt downloading the data before giving up.  The default of 3 should be appropriate 
@@ -620,23 +620,23 @@ in most cases.  When the <strong>retry</strong> option is false, the file is the
 of <strong>attempts</strong> (or send, in a sender) will cause the message to be added to a queue file 
 for later retry.  When there are no messages ready to consume from the AMQP queue, 
 the retry queue will be queried.</p>
-<p>retry_ttl <duration> (default: same as expire)
+<p>retry_ttl &lt;durationgt; (default: same as expire)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The <strong>retry_ttl</strong> (retry time to live) option indicates how long to keep trying to send 
 a file before it is aged out of a the queue.  Default is two days.  If a file has not 
 been transferred after two days of attempts, it is discarded.</p>
-<p>timeout <float> (default: 0)
+<p>timeout &lt;floatgt; (default: 0)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The <strong>timeout</strong> option, sets the number of seconds to wait before aborting a
 connection or download transfer (applied per buffer during transfer.)</p>
-<p>inflight <string> (default: .tmp or NONE if post_broker set)
+<p>inflight &lt;stringgt; (default: .tmp or NONE if post_broker set)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The  <strong>inflight</strong>  option sets how to ignore files when they are being transferred
 or (in mid-flight betweeen two systems.) Incorrect setting of this option causes
 unreliable transfers, and care must be taken.  See <code>Delivery Completion (inflight)</code>_ for more details.</p>
 <p>The value can be a file name suffix, which is appended to create a temporary name during 
 the transfer.  If <strong>inflight</strong>  is set to <strong>.</strong>, then it is a prefix, to conform with 
-the standard for "hidden" files on unix/linux.<br />
+the standard for &quot;hidden&quot; files on unix/linux.<br />
 If <strong>inflight</strong>  ends in / (example: <em>tmp/</em> ), then it is a prefix, and specifies a 
 sub-directory of the destination into which the file should be written while in flight. </p>
 <p>Whether a prefix or suffix is specified, when the transfer is 
@@ -650,11 +650,11 @@ with the final name, where the recipient will wait to receive a post notifying i
 of the file's arrival.  This is the fastest, lowest overhead option when it is available.
 It is also the default when a <em>post_broker</em> is given, indicating that some
 other process is to be notified after delivery.</p>
-<p>delete <boolean> (default: off)
+<p>delete &lt;booleangt; (default: off)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>When the <strong>delete</strong> option is set, after a download has completed successfully, the subscriber
 will delete the file at the upstream source.  Default is false.</p>
-<p>batch <count> (default: 100)
+<p>batch &lt;countgt; (default: 100)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The <strong>batch</strong> option is used to indicate how many files should be transferred 
 over a connection, before it is torn down, and re-established.  On very low 
@@ -662,7 +662,7 @@ volume transfers, where timeouts can occur between transfers, this should be
 lowered to 1.  For most usual situations the default is fine. for higher volume
 cases, one could raise it to reduce transfer overhead. It is only used for file
 transfer protocols, not HTTP ones at the moment.</p>
-<p>directory <path> (default: .)
+<p>directory &lt;pathgt; (default: .)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The <em>directory</em> option defines where to put the files on your server.
 Combined with  <strong>accept</strong> / <strong>reject</strong>  options, the user can select the
@@ -681,7 +681,7 @@ declared by the closest  <strong>directory</strong>  option above the matching  
     reject    .*Reg.*
     accept    .*GRIB.*
 </code></pre>
-<p>mirror <boolean> (default: off)
+<p>mirror &lt;booleangt; (default: off)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The  <strong>mirror</strong>  option can be used to mirror the dd.weather.gc.ca tree of the files.
 If set to  <strong>True</strong>  the directory given by the  <strong>directory</strong>  option
@@ -694,7 +694,7 @@ For example retrieving the following url, with options::</p>
    accept    .<em>RADAR.</em></p>
 <p>would result in the creation of the directories and the file
 /mylocaldirectory/radar/PRECIP/GIF/WGJ/201312141900_WGJ_PRECIP_SNOW.gif</p>
-<p>strip <count|regexp> (default: 0)
+<p>strip &lt;count|regexpgt; (default: 0)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>You can modify the mirrored directoties with the <strong>strip</strong> option. 
 If set to N  (an integer) the first 'N' directories are removed.
@@ -717,11 +717,11 @@ from the relative path.  for example if::</p>
 The expression:  .*?GIF   matches: radar/PRECIP/GIF
 whereas the expression: .*GIF matches the entire name.
 </code></pre>
-<p>flatten <string> (default: '/')
+<p>flatten &lt;stringgt; (default: '/')
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The  <strong>flatten</strong>  option is use to set a separator character. The default value ( '/' )
 nullifies the effect of this option.  This character replaces the '/' in the url 
-directory and create a "flatten" filename form its dd.weather.gc.ca path.<br />
+directory and create a &quot;flatten&quot; filename form its dd.weather.gc.ca path.<br />
 For example retrieving the following url, with options::</p>
 <p>http://dd.weather.gc.ca/model_gem_global/25km/grib2/lat_lon/12/015/CMC_glb_TMP_TGL_2_latlon.24x.24_2013121612_P015.grib2</p>
 <p>flatten   -
@@ -742,7 +742,7 @@ the component, it is not decoded or derived from the content of the files delive
 All date/times in Sarracenia are in UTC.</p>
 <p>Refer to <em>source_from_exchange</em> for a common example of usage.  Note that any sarracenia
 built-in value takes precedence over a variable of the same name in the environment.</p>
-<p>base_dir <path> (default: /)
+<p>base_dir &lt;pathgt; (default: /)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p><strong>base_dir</strong> supplies the directory path that, when combined with the relative
 one in the selected notification gives the absolute path of the file to be sent.
@@ -751,7 +751,7 @@ The defaults is None which means that the path in the notification is the absolu
     cannot explain this... do not know what it is myself. This is taken from sender.
     in a subscriber, if it is set... will it download? or will it assume it is local?
     in a sender.</p>
-<p>inplace <boolean> (default: On)
+<p>inplace &lt;booleangt; (default: On)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>Large files may be sent as a series of parts, rather than all at once.
 When downloading, if <strong>inplace</strong> is true, these parts will be appended to the file 
@@ -767,9 +767,9 @@ change again (adding a part suffix if necessary).</p>
 posting to a broker. The valid argument values are:</p>
 <p><strong>post:</strong></p>
 <p>post messages to an post_exchange</p>
-<p><strong>post_broker amqp{s}://<user>:<pw>@<brokerhost>[:port]/<vhost></strong>
-  <strong>post_exchange     <name>         (MANDATORY)</strong>
-  <strong>on_post           <script>       (default: None)</strong></p>
+<p><strong>post_broker amqp{s}://&lt;usergt;:&lt;pwgt;@&lt;brokerhostgt;[:port]/&lt;vhostgt;</strong>
+  <strong>post_exchange     &lt;namegt;         (MANDATORY)</strong>
+  <strong>on_post           &lt;scriptgt;       (default: None)</strong></p>
 <p>The <strong>post_broker</strong> defaults to the input broker if not provided.
   Just set it to another broker if you want to send the notifications
   elsewhere.</p>
@@ -782,25 +782,25 @@ posting to a broker. The valid argument values are:</p>
 <p>just output the retrieval URL to standard output.</p>
 <p>FIXME: The <strong>outlet</strong> option came from the C implementation ( <em>sr_cpump</em>  ) and it has not
 been used much in the python implementation. </p>
-<p>overwrite <boolean> (default: off)
+<p>overwrite &lt;booleangt; (default: off)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The  <strong>overwrite</strong>  option,if set to false, avoid unnecessary downloads under these conditions :</p>
 <p>1- the file to be downloaded is already on the user's file system at the right place and</p>
 <p>2- the checksum of the amqp message matched the one of the file.</p>
 <p>The default is False (overwrite without checking). </p>
-<p>discard <boolean> (default: off)
+<p>discard &lt;booleangt; (default: off)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The  <strong>discard</strong>  option,if set to true, deletes the file once downloaded. This option can be
 usefull when debugging or testing a configuration.</p>
-<p>source_from_exchange <boolean> (default: off)
+<p>source_from_exchange &lt;booleangt; (default: off)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The <strong>source_from_exchange</strong> option is mainly for use by administrators.
 If messages is received posted directly from a source, the exchange used 
-is 'xs_<brokerSourceUsername>'. Such messages be missing <em>source</em> and <em>from_cluster</em> 
+is 'xs_&lt;brokerSourceUsernamegt;'. Such messages be missing <em>source</em> and <em>from_cluster</em> 
 headings, or a malicious user may set the values incorrectly.
 To protect against both problems, administrators should set the <strong>source_from_exchange</strong> option.</p>
 <p>When the option is set, values in the message for the <em>source</em> and <em>from_cluster</em> headers will then be overridden::</p>
-<p>self.msg.headers['source']       = <brokerUser>
+<p>self.msg.headers['source']       = &lt;brokerUsergt;
   self.msg.headers['from_cluster'] = cluster</p>
 <p>replacing any values present in the message. This setting should always be used when ingesting data from a
 user exchange. These fields are used to return reports to the origin of injected data.
@@ -810,11 +810,11 @@ It is commonly combined with::</p>
    *directory ${PBD}/${YYYYMMDD}/${SOURCE}*
 </code></pre>
 <p>To have data arrive in the standard format tree.</p>
-<p>heartbeat <count> (default: 300 seconds)
+<p>heartbeat &lt;countgt; (default: 300 seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>The <strong>heartbeat</strong> option sets how often to execute periodic processing as determined by 
 the list of on_heartbeat plugins. By default, it prints a log message every heartbeat.</p>
-<p>suppress_duplicates <off|on|999> (default: off)
+<p>suppress_duplicates &lt;off|on|999gt; (default: off)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>When <strong>suppress_duplicates</strong> (also <strong>cache</strong> ) is set to a non-zero value, each new message
 is compared against previous ones received, to see if it is a duplicate. If the message is 
@@ -833,7 +833,7 @@ one must <strong>deploy two layers of subscribers</strong>. Use
 a <strong>first layer of subscribers (sr_shovels)</strong> with duplicate suppression turned 
 off and output with <em>post_exchange_split</em>, which route posts by checksum to 
 a <strong>second layer of subscibers (sr_winnow) whose duplicate suppression caches are active.</strong></p>
-<p>kbytes_ps <count> (default: 0)
+<p>kbytes_ps &lt;countgt; (default: 0)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p><strong>kbytes_ps</strong> is greater than 0, the process attempts to respect this delivery
 speed in kilobytes per second... ftp,ftps,or sftp)</p>
@@ -847,7 +847,7 @@ If no source mode is available, the <em>default_mode</em> will be applied to fil
 then the operating system  defaults (on linux, controlled by umask settings)
 will determine file permissions. (note that the <em>chmod</em> option is interpreted as a synonym
 for <em>default_mode</em>, and <em>chmod_dir</em> is a synonym for <em>default_dir_mode</em>.)</p>
-<p>recompute_chksum <boolean> (default: off)
+<p>recompute_chksum &lt;booleangt; (default: off)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>For each download, the checksum is computed during transfer. If <strong>recompute_chksum</strong>
 is set to True, and the recomputed checksum differ from the on in the message,
@@ -872,7 +872,7 @@ many protocols appropriate for different situations:</p>
 | Method      | Description                           | Application                          |
 +=============+=======================================+======================================+
 |             |File sent with right name.             |Sending to Sarracenia, and            |
-|   NONE      |Send <code>sr_post(7) &lt;sr_post.7.md&gt;</code>_     |post only when file is complete       |
+|   NONE      |Send <code>sr_post(7) &amp;lt;sr_post.7.mdgt;</code>_     |post only when file is complete       |
 |             |by AMQP after file is complete.        |                                      |
 |             |                                       |(Best when available)                 |
 |             | - fewer round trips (no renames)      | - Default on sr_sarra.               |
@@ -940,7 +940,7 @@ is set, the value of '.tmp' is assumed as the best option.</p>
 work that happens every <em>heartbeat</em> (default is 5 minutes.)  Evey heartbeat, all of the
 configured <em>on_heartbeat</em> plugins are run. By default there are three present:</p>
 <ul>
-<li>heartbeat_log - prints "heartbeat" in the log.</li>
+<li>heartbeat_log - prints &quot;heartbeat&quot; in the log.</li>
 <li>heartbeat_cache - ages out old entries in the cache, to minimize its size.</li>
 <li>heartbeat_memory - checks the process memory usage, and restart if too big.</li>
 <li>heartbeat_pulse - confirms that connectivity with brokers is still good. Restores if needed.</li>
@@ -988,14 +988,14 @@ All files which arrive in that directory or below it will be downloaded
 into the current directory (or just printed to standard output if -n option 
 was specified.) </p>
 <p>A variety of example configuration files are available here:</p>
-<p><code>https://github.com/MetPX/sarracenia/tree/master/sarra/examples &lt;https://github.com/MetPX/sarracenia/tree/master/sarra/examples&gt;</code>_</p>
+<p><code>https://github.com/MetPX/sarracenia/tree/master/sarra/examples &amp;lt;https://github.com/MetPX/sarracenia/tree/master/sarra/examplesgt;</code>_</p>
 <h1 id="naming-exchanges-and-queues">NAMING EXCHANGES AND QUEUES</h1>
 <p>While in most common cases, a good value is generated by the application, in some cases
 there may be a need to override those choices with an explicit user specification.
 To do that, one needs to be aware of the rules for naming queues:</p>
 <ol>
 <li>queue names start with q_</li>
-<li>this is followed by <amqpUserName> (the owner/user of the queue's broker username)</li>
+<li>this is followed by &lt;amqpUserNamegt; (the owner/user of the queue's broker username)</li>
 <li>followed by a second underscore ( _ )</li>
 <li>followed by a string of the user's choice.</li>
 </ol>
@@ -1004,13 +1004,13 @@ To do that, one needs to be aware of the rules for naming queues:</p>
 <ol>
 <li>Exchange names start with x</li>
 <li>Exchanges that end in <em>public</em> are accessible (for reading) by any authenticated user.</li>
-<li>Users are permitted to create exchanges with the pattern:  xs_<amqpUserName>_<whatever> such exchanges can be written to only by that user. </li>
-<li>The system (sr_audit or administrators) create the xr_<amqpUserName> exchange as a place to send reports for a given user. It is only readable by that user.</li>
+<li>Users are permitted to create exchanges with the pattern:  xs_&lt;amqpUserNamegt;_&lt;whatevergt; such exchanges can be written to only by that user. </li>
+<li>The system (sr_audit or administrators) create the xr_&lt;amqpUserNamegt; exchange as a place to send reports for a given user. It is only readable by that user.</li>
 <li>Administrative users (admin or feeder roles) can post or subscribe anywhere.</li>
 </ol>
 <p>For example, xpublic does not have xs_ and a username pattern, so it can only be posted to by admin or feeder users.
 Since it ends in public, any user can bind to it to subscribe to messages posted.
-Users can create exchanges such as xs_<amqpUserName>_public which can be written to by that user (by rule 3), 
+Users can create exchanges such as xs_&lt;amqpUserNamegt;_public which can be written to by that user (by rule 3), 
 and read by others (by rule 2.) A description of the conventional flow of messages through exchanges on a pump.<br />
 Subscribers usually bind to the xpublic exchange to get the main data feed. this is the default in sr_subscribe.</p>
 <p>Another example, a user named Alice will have at least two exchanges:</p>
@@ -1025,7 +1025,7 @@ by re-announcing it on the xpublic exchange.</p>
 <h1 id="queues-and-multiple-streams">QUEUES and MULTIPLE STREAMS</h1>
 <p>When executed,  <strong>sr_subscribe</strong>  chooses a queue name, which it writes
 to a file named after the configuration file given as an argument to <strong>sr_subscribe</strong>
-with a .queue suffix ( ."configfile".queue). 
+with a .queue suffix ( .&quot;configfile&quot;.queue). 
 If sr_subscribe is stopped, the posted messages continue to accumulate on the 
 broker in the queue.  When the program is restarted, it uses the queuename 
 stored in that file to connect to the same queue, and not lose any messages.</p>
@@ -1047,8 +1047,8 @@ and that download stream can be multi-streamed as well.</p>
 <p>For each download, by default, an amqp report message is sent back to the broker.
 This is done with option :</p>
 <ul>
-<li><strong>report_back <boolean>        (default: True)</strong> </li>
-<li><strong>report_exchange <report_exchangename> (default: xreport|xs_<em>username</em> )</strong></li>
+<li><strong>report_back &lt;booleangt;        (default: True)</strong> </li>
+<li><strong>report_exchange &lt;report_exchangenamegt; (default: xreport|xs_<em>username</em> )</strong></li>
 </ul>
 <p>When a report is generated, it is sent to the configured <em>report_exchange</em>. Administrive
 components post directly to <em>xreport</em>, whereas user components post to their own 
@@ -1056,7 +1056,7 @@ exchanges (xs_<em>username</em>.) The report daemons then copy the messages to <
 <p>These reports are used for delivery tuning and for data sources to generate statistical information.
 Set this option to <strong>False</strong>, to prevent generation of reports.</p>
 <h1 id="logs">LOGS</h1>
-<p>Components write to log files, which by default are found in ~/.cache/sarra/var/log/<component><em><config></em><instance>.log.
+<p>Components write to log files, which by default are found in ~/.cache/sarra/var/log/&lt;componentgt;<em>&lt;configgt;</em>&lt;instancegt;.log.
 at the end of the day, These logs are rotated automatically by the components, and the old log gets a date suffix.
 The directory in which the logs are stored can be overridden by the <strong>log</strong> option, and the number of days' logs to keep
 is set by the 'logrotate' parameter.  Log files older than <strong>logrotate</strong> duration are deleted.  A duration takes a time unit suffix, such as 'd' for days, 'w' for weeks, or 'h' for hours.</p>
@@ -1078,10 +1078,10 @@ is set by the 'logrotate' parameter.  Log files older than <strong>logrotate</st
 <p><strong>chmod_log</strong> the permission bits to set on log files (default 0600 )</p>
 </li>
 </ul>
-<p>placement is as per: <code>XDG Open Directory Specication &lt;https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.md&gt;</code>_ ) setting the XDG_CACHE_HOME environment variable.</p>
+<p>placement is as per: <code>XDG Open Directory Specication &amp;lt;https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.mdgt;</code>_ ) setting the XDG_CACHE_HOME environment variable.</p>
 <h1 id="instances">INSTANCES</h1>
-<p>Sometimes one instance of a component and configuration is not enough to process &amp; send all available notifications.</p>
-<p><strong>instances      <integer>     (default:1)</strong></p>
+<p>Sometimes one instance of a component and configuration is not enough to process &amp;amp send all available notifications.</p>
+<p><strong>instances      &lt;integergt;     (default:1)</strong></p>
 <p>The instance option allows launching serveral instances of a component and configuration.
 When running sr_sender for example, a number of runtime files that are created.
 In the ~/.cache/sarra/sender/configName directory::</p>
@@ -1090,7 +1090,7 @@ In the ~/.cache/sarra/sender/configName directory::</p>
 <p>In directory ~/.cache/sarra/var/log::</p>
 <p>A .sr_sender_configname_$instance.log  is created as a log of $instance process.</p>
 <p>The logs can be written in another directory than the default one with option :</p>
-<p><strong>log            <directory logpath>  (default:~/.cache/sarra/var/log)</strong></p>
+<p><strong>log            &lt;directory logpathgt;  (default:~/.cache/sarra/var/log)</strong></p>
 <p>.. note::<br />
   FIXME: indicate windows location also... dot files on windows?</p>
 <p>.. Note::</p>
@@ -1111,7 +1111,7 @@ the server go down, the <strong>vip</strong> is moved on another server.
 Both servers would run <strong>sr_subscribe</strong>. It is for that reason that the
 following options were implemented:</p>
 <ul>
-<li><strong>vip          <string>          (None)</strong></li>
+<li><strong>vip          &lt;stringgt;          (None)</strong></li>
 </ul>
 <p>When you run only one <strong>sr_subscribe</strong> on one server, these options are not set,
 and sr_subscribe will run in 'standalone mode'.</p>
@@ -1125,32 +1125,32 @@ If it does, it consumes and process a message and than rechecks for the vip.</p>
 the rabbitmq configuration for an output broker.</p>
 <p>The post_broker option sets all the credential information to connect to the 
 output <strong>AMQP</strong> broker.</p>
-<p><strong>post_broker amqp{s}://<user>:<pw>@<brokerhost>[:port]/<vhost></strong></p>
+<p><strong>post_broker amqp{s}://&lt;usergt;:&lt;pwgt;@&lt;brokerhostgt;[:port]/&lt;vhostgt;</strong></p>
 <p>Once connected to the source AMQP broker, the program builds notifications after
 the download of a file has occured. To build the notification and send it to
 the next hop broker, the user sets these options :</p>
 <ul>
-<li><strong>[--blocksize <value>]            (default: 0 (auto))</strong></li>
-<li><strong>[--outlet <post|json|url>]       (default: post)</strong></li>
-<li><strong>[-pbd|--post_base_dir <path>]    (optional)</strong></li>
-<li><strong>post_exchange     <name>         (default: xpublic)</strong></li>
-<li><strong>post_exchange_split   <number>   (default: 0)</strong></li>
-<li><strong>post_base_url          <url>     (MANDATORY)</strong></li>
-<li><strong>on_post           <script>       (default: None)</strong></li>
+<li><strong>[--blocksize &lt;valuegt;]            (default: 0 (auto))</strong></li>
+<li><strong>[--outlet &lt;post|json|urlgt;]       (default: post)</strong></li>
+<li><strong>[-pbd|--post_base_dir &lt;pathgt;]    (optional)</strong></li>
+<li><strong>post_exchange     &lt;namegt;         (default: xpublic)</strong></li>
+<li><strong>post_exchange_split   &lt;numbergt;   (default: 0)</strong></li>
+<li><strong>post_base_url          &lt;urlgt;     (MANDATORY)</strong></li>
+<li><strong>on_post           &lt;scriptgt;       (default: None)</strong></li>
 </ul>
-<h2 id="-blocksize-default-0-auto">[--blocksize <value>] (default: 0 (auto))</h2>
+<h2 id="-blocksize-valuegt-default-0-auto">[--blocksize &lt;valuegt;] (default: 0 (auto))</h2>
 <p>This <strong>blocksize</strong> option controls the partitioning strategy used to post files.
 the value should be one of::</p>
 <p>0 - autocompute an appropriate partitioning strategy (default)
    1 - always send entire files in a single part.
-   <blocksize> - used a fixed partition size (example size: 1M )</p>
+   &lt;blocksizegt; - used a fixed partition size (example size: 1M )</p>
 <p>Files can be announced as multiple parts.  Each part has a separate checksum.
 The parts and their checksums are stored in the cache. Partitions can traverse
 the network separately, and in paralllel.  When files change, transfers are
 optimized by only sending parts which have changed.</p>
 <p>The <em>outlet</em> option allows the final output to be other than a post.<br />
-See <code>sr_cpump(1) &lt;sr_cpump.1.md&gt;</code>_ for details.</p>
-<h2 id="-pbd-post_base_dir-optional">[-pbd|--post_base_dir <path>] (optional)</h2>
+See <code>sr_cpump(1) &amp;lt;sr_cpump.1.mdgt;</code>_ for details.</p>
+<h2 id="-pbd-post_base_dir-pathgt-optional">[-pbd|--post_base_dir &lt;pathgt;] (optional)</h2>
 <p>The <em>post_base_dir</em> option supplies the directory path that, when combined (or found) 
 in the given <em>path</em>, gives the local absolute path to the data file to be posted.
 The <em>post_base_dir</em> part of the path will be removed from the posted announcement.
@@ -1158,16 +1158,16 @@ for sftp: url's it can be appropriate to specify a path relative to a user accou
 Example of that usage would be:  -pbd ~user  -url sftp:user@host
 for file: url's, base_dir is usually not appropriate.  To post an absolute path,
 omit the -pbd setting, and just specify the complete path as an argument.</p>
-<h2 id="post_url-mandatory">post_url <url> (MANDATORY)</h2>
+<h2 id="post_url-urlgt-mandatory">post_url &lt;urlgt; (MANDATORY)</h2>
 <p>The <strong>post_base_url</strong> option sets how to get the file... it defines the protocol,
 host, port, and optionally, the user. It is best practice to not include 
 passwords in urls.</p>
-<h2 id="post_exchange-default-xpublic">post_exchange <name> (default: xpublic)</h2>
+<h2 id="post_exchange-namegt-default-xpublic">post_exchange &lt;namegt; (default: xpublic)</h2>
 <p>The <strong>post_exchange</strong> option set under which exchange the new notification
 will be posted.  Im most cases it is 'xpublic'.</p>
 <p>Whenever a publish happens for a product, a user can set to trigger a script.
 The option <strong>on_post</strong> would be used to do such a setup.</p>
-<h2 id="post_exchange_split-default-0">post_exchange_split   <number>   (default: 0)</h2>
+<h2 id="post_exchange_split-numbergt-default-0">post_exchange_split   &lt;numbergt;   (default: 0)</h2>
 <p>The <strong>post_exchange_split</strong> option appends a two digit suffix resulting from 
 hashing the last character of the checksum to the post_exchange name,
 in order to divide the output amongst a number of exchanges.  This is currently used
@@ -1261,7 +1261,7 @@ a list of protocols that theses functions supports.  Exemple :</p>
 than for any download of a message with an ftp or ftps url, it is that function that would be called.</p>
 <p>On_* plugins are used more often. They allow actions to be inserted to augment the default
 processing for various specialized use cases. The scripts are invoked by having a given
-configuration file specify an on_<event> option. The event can be one of:</p>
+configuration file specify an on_&lt;eventgt; option. The event can be one of:</p>
 <ul>
 <li>
 <p>plugin -- declare a set of plugins to achieve a collective function.</p>
@@ -1316,7 +1316,7 @@ configuration file specify an on_<event> option. The event can be one of:</p>
 <pre><code>  def on_file(self,parent):
       logger = parent.logger
 
-      logger.info("I have no effect but adding this log line")
+      logger.info(&amp;quot;I have no effect but adding this log line&amp;quot;)
 
       return True
 </code></pre>
@@ -1330,9 +1330,9 @@ the processing of the message/file will stop there.  Processing will only
 continue if all configured plugins return True.  One can specify <em>on_message None</em> to 
 reset the list to no plugins (removes msg_log, so it suppresses logging of message receipt.)</p>
 <p>The only argument the script receives is <strong>parent</strong>, which is a data
-structure containing all the settings, as <strong>parent.<setting></strong>, and
+structure containing all the settings, as <strong>parent.&lt;settinggt;</strong>, and
 the content of the message itself as <strong>parent.msg</strong> and the headers
-are available as <strong>parent.msg[ <header> ]</strong>.  The path to write a file
+are available as <strong>parent.msg[ &lt;headergt; ]</strong>.  The path to write a file
 to is available as There is also <strong>parent.msg.new_dir</strong> / <strong>parent.msg.new_file</strong></p>
 <p>There is also registered plugins used to add or overwrite built-in 
 transfer protocol scripts. They should be declared using the <strong>plugin</strong> option.
@@ -1366,7 +1366,7 @@ a list of protocols that the provided module supports.</p>
 
       if ':' in msg.relpath : return None
 
-      netloc = parent.destination.replace("sftp://",'')
+      netloc = parent.destination.replace(&amp;quot;sftp://&amp;quot;,'')
       if netloc[-1] == '/' : netloc = netloc[:-1]
 
       cmd = '/usr/bin/scp ' + msg.relpath + ' ' +  netloc + ':' + msg.new_dir + os.sep + msg.new_file
@@ -1393,7 +1393,7 @@ Some other available variables::</p>
   parent.msg.length       :  length of file or part
   parent.msg.in_partfile  :  T/F file temporary in part file
   parent.msg.local_url    :  url for reannouncement</p>
-<p>See the <code>Programming Guide &lt;Prog.md&gt;</code>_ for more details.</p>
+<p>See the <code>Programming Guide &amp;lt;Prog.mdgt;</code>_ for more details.</p>
 <h1 id="queue-saverestore">Queue Save/Restore</h1>
 <h2 id="sender-destination-unavailable">Sender Destination Unavailable</h2>
 <p>If the server to which the files are being sent is going to be unavailable for
@@ -1405,14 +1405,14 @@ when too large a queue will certainly build up.
 The <em>-save</em> option copies the messages to a (per instance) disk file (in the same directory
 that stores state and pid files), as json encoded strings, one per line.
 When a queue is building up::</p>
-<p>sr_sender stop <config> 
-   sr_sender -save start <config> </p>
+<p>sr_sender stop &lt;configgt; 
+   sr_sender -save start &lt;configgt; </p>
 <p>And run the sender in <em>save</em> mode (which continually writes incoming messages to disk)
 in the log, a line for each message written to disk::</p>
 <p>2017-03-03 12:14:51,386 [INFO] sr_sender saving 2 message topic: v02.post.home.peter.sarra_devdocroot.sub.SASP34_LEMM_031630__LEDA_60215</p>
 <p>Continue in this mode until the absent server is again available.  At that point::</p>
-<p>sr_sender stop <config> 
-   sr_sender -restore start <config> </p>
+<p>sr_sender stop &lt;configgt; 
+   sr_sender -restore start &lt;configgt; </p>
 <p>While restoring from the disk file, messages like the following will appear in the log::</p>
 <p>2017-03-03 12:15:02,969 [INFO] sr_sender restoring message 29 of 34: topic: v02.post.home.peter.sarra_devdocroot.sub.ON_02GD022_daily_hydrometric.csv</p>
 <p>After the last one::</p>
@@ -1481,7 +1481,7 @@ saved to a file into the same queue::</p>
 <p>All the messages saved are returned to the named <em>return_to_queue</em>. Note that the use of the <em>post_rate_limit</em>
 plugin prevents the queue from being flooded with hundreds of messages per second. The rate limit to use will need
 to be tuned in practice.</p>
-<p>by default the file name for the save file is chosen to be in ~/.cache/sarra/shovel/<config>_<instance>.save.
+<p>by default the file name for the save file is chosen to be in ~/.cache/sarra/shovel/&lt;configgt;_&lt;instancegt;.save.
 To Choose a different destination, <em>save_file</em> option is available::</p>
 <p>sr_shovel -save_file <code>pwd</code>/here -restore_to_queue q_tsub.sr_subscribe.t.99524171.43129428 ./save.conf foreground</p>
 <p>will create the save files in the current directory named here_000x.save where x is the instance number (0 for foreground.)</p>
@@ -1493,21 +1493,21 @@ To Choose a different destination, <em>save_file</em> option is available::</p>
 sr_shovel, sr_sarra and sr_sender (when posting).</p>
 <ul>
 <li>
-<p><strong>feeder    amqp{s}://<user>:<pw>@<post_brokerhost>[:port]/<vhost></strong></p>
+<p><strong>feeder    amqp{s}://&lt;usergt;:&lt;pwgt;@&lt;post_brokerhostgt;[:port]/&lt;vhostgt;</strong></p>
 </li>
 <li>
-<p><strong>admin   <name>        (default: None)</strong></p>
+<p><strong>admin   &lt;namegt;        (default: None)</strong></p>
 </li>
 </ul>
 <p>When set, the admin option will cause sr start to start up the sr_audit daemon.
 FIXME: current versions, all users run sr_audit to notice dead subscribers.
 Most users are defined using the <em>declare</em> option.</p>
 <ul>
-<li><strong>declare <role> <name>   (no defaults)</strong></li>
+<li><strong>declare &lt;rolegt; &lt;namegt;   (no defaults)</strong></li>
 </ul>
 <h2 id="subscriber">subscriber</h2>
 <p>A subscriber is user that can only subscribe to data and return report messages. Subscribers are
-  not permitted to inject data.  Each subscriber has an xs_<user> named exchange on the pump,
+  not permitted to inject data.  Each subscriber has an xs_&lt;usergt; named exchange on the pump,
   where if a user is named <em>Acme</em>, the corresponding exchange will be <em>xs_Acme</em>.  This exchange
   is where an sr_subscribe process will send it's report messages.</p>
 <p>By convention/default, the <em>anonymous</em> user is created on all pumps to permit subscription without
@@ -1518,8 +1518,8 @@ Most users are defined using the <em>declare</em> option.</p>
   So if an organization gathers and makes available ten kinds of data with a single contact
   email or phone number for questions about the data and it's availability, then all of
   those collection activities might use a single 'source' account.</p>
-<p>Each source gets a xs_<user> exchange for injection of data posts, and, similar to a subscriber
-  to send report messages about processing and receipt of data. source may also have an xl_<user>
+<p>Each source gets a xs_&lt;usergt; exchange for injection of data posts, and, similar to a subscriber
+  to send report messages about processing and receipt of data. source may also have an xl_&lt;usergt;
   exchange where, as per report routing configurations, report messages of consumers will be sent.</p>
 <p>User credentials are placed in the credentials files, and <em>sr_audit</em> will update
 the broker to accept what is specified in that file, as long as the admin password is
@@ -1532,7 +1532,7 @@ directory.  The configuration files for an sr_subscribe configuration
 called <em>myflow</em> would be here:</p>
 <ul>
 <li>
-<p>linux: ~/.config/sarra/subscribe/myflow.conf (as per: <code>XDG Open Directory Specication &lt;https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.md&gt;</code>_ ) </p>
+<p>linux: ~/.config/sarra/subscribe/myflow.conf (as per: <code>XDG Open Directory Specication &amp;lt;https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.mdgt;</code>_ ) </p>
 </li>
 <li>
 <p>Windows: %AppDir%/science.gc.ca/sarra/myflow.conf , this might be:
@@ -1562,31 +1562,31 @@ look in the <em>plugins</em> directory in the users config tree, then in the sit
 directory, then in the sarracenia package itself, and finally it will look remotely.</p>
 <h1 id="see-also">SEE ALSO</h1>
 <p><strong>User Commands:</strong></p>
-<p><code>sr_subscribe(1) &lt;sr_subscribe.1.md&gt;</code>_ - Select and Conditionally Download Posted Files</p>
-<p><code>sr_post(1) &lt;sr_post.1.md&gt;</code>_ - post announcemensts of specific files.</p>
-<p><code>sr_watch(1) &lt;sr_watch.1.md&gt;</code>_ - post that loops, watching over directories.</p>
-<p><code>sr_sender(1) &lt;sr_sender.1.md&gt;</code>_ - subscribes to messages pointing at local files, and sends them to remote systems and reannounces them there.</p>
-<p><code>sr_report(1) &lt;sr_report.1.md&gt;</code>_ - process report messages.</p>
+<p><code>sr_subscribe(1) &amp;lt;sr_subscribe.1.mdgt;</code>_ - Select and Conditionally Download Posted Files</p>
+<p><code>sr_post(1) &amp;lt;sr_post.1.mdgt;</code>_ - post announcemensts of specific files.</p>
+<p><code>sr_watch(1) &amp;lt;sr_watch.1.mdgt;</code>_ - post that loops, watching over directories.</p>
+<p><code>sr_sender(1) &amp;lt;sr_sender.1.mdgt;</code>_ - subscribes to messages pointing at local files, and sends them to remote systems and reannounces them there.</p>
+<p><code>sr_report(1) &amp;lt;sr_report.1.mdgt;</code>_ - process report messages.</p>
 <p><strong>Pump Adminisitrator Commands:</strong></p>
-<p><code>sr_shovel(8) &lt;sr_shovel.8.md&gt;</code>_ - process messages (no downloading.)</p>
-<p><code>sr_winnow(8) &lt;sr_winnow.8.md&gt;</code>_ - a shovel with cache on, to winnow wheat from chaff.</p>
-<p><code>sr_sarra(8) &lt;sr_sarra.8.md&gt;</code>_ - Subscribe, Acquire, and ReAdvertise tool.</p>
-<p><code>sr_audit(8) &lt;sr_audit.8.md&gt;</code>_ - Monitoring daemon, audits running configurations, restarts missing instances.</p>
-<p><code>sr_log2save(8) &lt;sr_log2save.8.md&gt;</code>_ - Convert logfile lines to .save Format for reload/resend.</p>
+<p><code>sr_shovel(8) &amp;lt;sr_shovel.8.mdgt;</code>_ - process messages (no downloading.)</p>
+<p><code>sr_winnow(8) &amp;lt;sr_winnow.8.mdgt;</code>_ - a shovel with cache on, to winnow wheat from chaff.</p>
+<p><code>sr_sarra(8) &amp;lt;sr_sarra.8.mdgt;</code>_ - Subscribe, Acquire, and ReAdvertise tool.</p>
+<p><code>sr_audit(8) &amp;lt;sr_audit.8.mdgt;</code>_ - Monitoring daemon, audits running configurations, restarts missing instances.</p>
+<p><code>sr_log2save(8) &amp;lt;sr_log2save.8.mdgt;</code>_ - Convert logfile lines to .save Format for reload/resend.</p>
 <p><strong>Formats:</strong></p>
-<p><code>sr_post(7) &lt;sr_post.7.md&gt;</code>_ - The format of announcement messages.</p>
-<p><code>sr_report(7) &lt;sr_report.7.md&gt;</code>_ - the format of report messages.</p>
-<p><code>sr_pulse(7) &lt;sr_pulse.7.md&gt;</code>_ - The format of pulse messages.</p>
+<p><code>sr_post(7) &amp;lt;sr_post.7.mdgt;</code>_ - The format of announcement messages.</p>
+<p><code>sr_report(7) &amp;lt;sr_report.7.mdgt;</code>_ - the format of report messages.</p>
+<p><code>sr_pulse(7) &amp;lt;sr_pulse.7.mdgt;</code>_ - The format of pulse messages.</p>
 <p><strong>Home Page:</strong></p>
-<p><code>https://github.com/MetPX/ &lt;https://github.com/MetPX&gt;</code>_ - sr_subscribe is a component of MetPX-Sarracenia, the AMQP based data pump.</p>
+<p><code>https://github.com/MetPX/ &amp;lt;https://github.com/MetPXgt;</code>_ - sr_subscribe is a component of MetPX-Sarracenia, the AMQP based data pump.</p>
 <h1 id="sundew-compatibility-options">SUNDEW COMPATIBILITY OPTIONS</h1>
 <p>For compatibility with sundew, there are some additional delivery options which can be specified.</p>
-<h2 id="destfn_script-defaultnone">destfn_script &lt;script&gt; (default:None)</h2>
+<h2 id="destfn_script-scriptgt-defaultnone">destfn_script &lt;scriptgt; (default:None)</h2>
 <p>This option defines a script to be run when everything is ready
 for the delivery of the product.  The script receives the sr_sender class
 instance.  The script takes the parent as an argument, and for example, any
 modification to  <strong>parent.msg.new_file</strong>  will change the name of the file written locally.</p>
-<h2 id="filename-defaultwhatfn">filename <keyword> (default:WHATFN)</h2>
+<h2 id="filename-keywordgt-defaultwhatfn">filename &lt;keywordgt; (default:WHATFN)</h2>
 <p>From <strong>metpx-sundew</strong> the support of this option give all sorts of possibilities
 for setting the remote filename. Some <strong>keywords</strong> are based on the fact that
 <strong>metpx-sundew</strong> filenames are five (to six) fields strings separated by for colons.
@@ -1596,7 +1596,7 @@ The possible keywords are :</p>
 <p><strong>HEADFN</strong>
  - HEADER part of the sundew filename</p>
 <p><strong>SENDER</strong>
- - the sundew filename may end with a string SENDER=<string> in this case the <string> will be the remote filename</p>
+ - the sundew filename may end with a string SENDER=&lt;stringgt; in this case the &lt;stringgt; will be the remote filename</p>
 <p><strong>NONE</strong>
  - deliver with the complete sundew filename (without :SENDER=...)</p>
 <p><strong>NONESENDER</strong>
@@ -1609,7 +1609,7 @@ The possible keywords are :</p>
  - cmc internal satnet application parameters</p>
 <p><strong>DESTFNSCRIPT=script.py</strong>
  - invoke a script (same as destfn_script) to generate the name of the file to write</p>
-<p><strong>accept <regexp pattern> [<keyword>]</strong></p>
+<p><strong>accept &lt;regexp patterngt; [&lt;keywordgt;]</strong></p>
 <p>keyword can be added to the <strong>accept</strong> option. The keyword is any one of the <strong>filename</strong>
 tion.  A message that matched against the accept regexp pattern, will have its remote_file
 plied this keyword option.  This keyword has priority over the preceeding <strong>filename</strong> one.</p>
@@ -1636,7 +1636,7 @@ the second <strong>${1}</strong> etc.</p>
 </code></pre>
 <p>A selected message by the first accept would be delivered unchanged to the first directory.</p>
 <p>A selected message by the second accept would be delivered unchanged to the second directory.</p>
-<p>A selected message by the third accept would be renamed "file_of_type3" in the second directory.</p>
+<p>A selected message by the third accept would be renamed &quot;file_of_type3&quot; in the second directory.</p>
 <p>A selected message by the forth accept would be delivered unchanged to a directory.</p>
 <p>named  <em>/this/20160123/pattern/RAW_MERGER_GRIB/directory</em> if the message would have a notice like:</p>
 <p><strong>20150813161959.854 http://this.pump.com/ relative/path/to/20160123_product_RAW_MERGER_GRIB_from_CMC</strong></p>
@@ -1677,15 +1677,15 @@ from the delivered file names.</p>
 <h2 id="deprecated-settings">DEPRECATED SETTINGS</h2>
 <p>These settings pertain to previous versions of the client, and have been superceded.</p>
 <ul>
-<li><strong>host          <broker host>  (unsupported)</strong> </li>
-<li><strong>amqp-user     <broker user>  (unsupported)</strong> </li>
-<li><strong>amqp-password <broker pass>  (unsupported)</strong> </li>
-<li><strong>http-user     <url    user>  (now in credentials.conf)</strong> </li>
-<li><strong>http-password <url    pass>  (now in credentials.conf)</strong> </li>
-<li><strong>topic         <amqp pattern> (deprecated)</strong> </li>
-<li><strong>exchange_type <type>         (default: topic)</strong> </li>
-<li><strong>exchange_key  <amqp pattern> (deprecated)</strong> </li>
-<li><strong>lock      <locktext>         (renamed to inflight)</strong> </li>
+<li><strong>host          &lt;broker hostgt;  (unsupported)</strong> </li>
+<li><strong>amqp-user     &lt;broker usergt;  (unsupported)</strong> </li>
+<li><strong>amqp-password &lt;broker passgt;  (unsupported)</strong> </li>
+<li><strong>http-user     &lt;url    usergt;  (now in credentials.conf)</strong> </li>
+<li><strong>http-password &lt;url    passgt;  (now in credentials.conf)</strong> </li>
+<li><strong>topic         &lt;amqp patterngt; (deprecated)</strong> </li>
+<li><strong>exchange_type &lt;typegt;         (default: topic)</strong> </li>
+<li><strong>exchange_key  &lt;amqp patterngt; (deprecated)</strong> </li>
+<li><strong>lock      &lt;locktextgt;         (renamed to inflight)</strong> </li>
 </ul>
 <h1 id="history">HISTORY</h1>
 <p>Dd_subscribe was initially developed for  <strong>dd.weather.gc.ca</strong>, an Environment Canada website 
