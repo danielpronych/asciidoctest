@@ -11,7 +11,7 @@
 <p><strong>sr_subscribe</strong> foreground|start|stop|restart|reload|sanity|status configfile</p>
 <p><strong>sr_subscribe</strong> cleanup|declare|setup|disable|enable|list|add|remove configfile</p>
 <h1 id="description">DESCRIPTION</h1>
-<p>[ <code>version francaise &lt;fr/sr_subscribe.1.rst&gt;</code>_ ]</p>
+<p>[ <code>version francaise &lt;fr/sr_subscribe.1.md&gt;</code>_ ]</p>
 <div class="toc"><span class="toctitle">Contents</span><ul>
 <li><a href="#select-and-conditionally-download-posted-files">Select and Conditionally Download Posted Files</a></li>
 <li><a href="#synopsis">SYNOPSIS</a></li>
@@ -80,7 +80,7 @@
 </ul>
 </div>
 <p>Sr_subscribe is a program to download files from websites or file servers 
-that provide <code>sr_post(7) &lt;sr_post.7.rst&gt;</code>_ protocol notifications.  Such sites 
+that provide <code>sr_post(7) &lt;sr_post.7.md&gt;</code>_ protocol notifications.  Such sites 
 publish messages for each file as soon as it is available.  Clients connect to a
 <em>broker</em> (often the same as the server itself) and subscribe to the notifications.
 The <em>sr_post</em> notifications provide true push notices for web-accessible folders (WAF),
@@ -93,14 +93,14 @@ suppress the download behaviour and only post the URL on standard output.  The s
 output can be piped to other processes in classic UNIX text filter style.  </p>
 <p>Sr_subscribe is very configurable and is the basis for other components of sarracenia:</p>
 <ul>
-<li><code>sr_report(1) &lt;sr_report.1.rst&gt;</code>_ - process report messages.</li>
-<li><code>sr_sender(1) &lt;sr_sender.1.rst&gt;</code>_ - copy messages, only, not files.</li>
-<li><code>sr_winnow(8) &lt;sr_winnow.8.rst&gt;</code>_ - suppress duplicates.</li>
-<li><code>sr_shovel(8) &lt;sr_shovel.8.rst&gt;</code>_ - copy messages, only, not files.</li>
-<li><code>sr_sarra(8) &lt;sr_sarra.8.rst&gt;</code>_ -   Subscribe, Acquire, and Recursival ReAdvertise Ad nauseam.</li>
+<li><code>sr_report(1) &lt;sr_report.1.md&gt;</code>_ - process report messages.</li>
+<li><code>sr_sender(1) &lt;sr_sender.1.md&gt;</code>_ - copy messages, only, not files.</li>
+<li><code>sr_winnow(8) &lt;sr_winnow.8.md&gt;</code>_ - suppress duplicates.</li>
+<li><code>sr_shovel(8) &lt;sr_shovel.8.md&gt;</code>_ - copy messages, only, not files.</li>
+<li><code>sr_sarra(8) &lt;sr_sarra.8.md&gt;</code>_ -   Subscribe, Acquire, and Recursival ReAdvertise Ad nauseam.</li>
 </ul>
 <p>All of these components accept the same options, with the same effects.
-There is also <code>sr_cpump(1) &lt;sr_cpump.1.rst&gt;</code>_ which is a C version that implements a
+There is also <code>sr_cpump(1) &lt;sr_cpump.1.md&gt;</code>_ which is a C version that implements a
 subset of the options here, but where they are implemented, they have the same effect.</p>
 <p>The <strong>sr_subscribe</strong> command takes two arguments: an action start|stop|restart|reload|status, 
 followed by an a configuration file. </p>
@@ -149,24 +149,24 @@ new users will find the guides provide more helpful examples and walk
 throughs and should start with them.</p>
 <p>users:</p>
 <ul>
-<li><code>Installation &lt;Install.rst&gt;</code>_ - initial installation.</li>
-<li><code>Subscriber Guide &lt;subscriber.rst&gt;</code>_ - effective downloading from a pump.</li>
-<li><code>Source Guide &lt;source.rst&gt;</code>_ - effective uploading to a pump</li>
-<li><code>Programming Guide &lt;Prog.rst&gt;</code>_ - Programming custom plugins for workflow integration.</li>
+<li><code>Installation &lt;Install.md&gt;</code>_ - initial installation.</li>
+<li><code>Subscriber Guide &lt;subscriber.md&gt;</code>_ - effective downloading from a pump.</li>
+<li><code>Source Guide &lt;source.md&gt;</code>_ - effective uploading to a pump</li>
+<li><code>Programming Guide &lt;Prog.md&gt;</code>_ - Programming custom plugins for workflow integration.</li>
 </ul>
 <p>Administrators:</p>
 <ul>
-<li><code>Admin Guide &lt;Admin.rst&gt;</code>_ - Configuration of Pumps</li>
-<li><code>Upgrade Guide &lt;UPGRADING.rst&gt;</code>_ - MUST READ when upgrading pumps.</li>
+<li><code>Admin Guide &lt;Admin.md&gt;</code>_ - Configuration of Pumps</li>
+<li><code>Upgrade Guide &lt;UPGRADING.md&gt;</code>_ - MUST READ when upgrading pumps.</li>
 </ul>
 <p>contributors:</p>
 <ul>
-<li><code>Developer Guide &lt;Dev.rst&gt;</code>_ - contributing to sarracenia development.</li>
+<li><code>Developer Guide &lt;Dev.md&gt;</code>_ - contributing to sarracenia development.</li>
 </ul>
 <p>meta:</p>
 <ul>
-<li><code>Overview &lt;sarra.rst&gt;</code>_ - Introduction.</li>
-<li><code>Concepts &lt;Concepts.rst&gt;</code>_ - Concepts and Glossary</li>
+<li><code>Overview &lt;sarra.md&gt;</code>_ - Introduction.</li>
+<li><code>Concepts &lt;Concepts.md&gt;</code>_ - Concepts and Glossary</li>
 </ul>
 <p>There are also other manual pages available here: <code>See Also</code>_</p>
 <p>Some quick hints are also available When the command line is invoked with 
@@ -352,9 +352,9 @@ up in credentials.conf.</p>
  The next to last password is:  <strong>De:olonize</strong>. ( %3a being the url encoded value for a colon character. )</p>
 <h1 id="consumer">CONSUMER</h1>
 <p>Most Metpx Sarracenia components loop on reception and consumption of sarracenia 
-AMQP messages.  Usually, the messages of interest are <code>sr_post(7) &lt;sr_post.7.rst&gt;</code><em> 
+AMQP messages.  Usually, the messages of interest are <code>sr_post(7) &lt;sr_post.7.md&gt;</code><em> 
 messages, announcing the availability of a file by publishing it��s URL ( or a part 
-of a file ), but there are also <code>sr_report(7) &lt;sr_report.7.rst&gt;</code></em> messages which 
+of a file ), but there are also <code>sr_report(7) &lt;sr_report.7.md&gt;</code></em> messages which 
 can be processed using the same tools. AMQP messages are published to an exchange 
 on a broker (AMQP server.) The exchange delivers messages to queues. To receive 
 messages, one must provide the credentials to connect to the broker (AMQP message 
@@ -872,7 +872,7 @@ many protocols appropriate for different situations:</p>
 | Method      | Description                           | Application                          |
 +=============+=======================================+======================================+
 |             |File sent with right name.             |Sending to Sarracenia, and            |
-|   NONE      |Send <code>sr_post(7) &lt;sr_post.7.rst&gt;</code>_     |post only when file is complete       |
+|   NONE      |Send <code>sr_post(7) &lt;sr_post.7.md&gt;</code>_     |post only when file is complete       |
 |             |by AMQP after file is complete.        |                                      |
 |             |                                       |(Best when available)                 |
 |             | - fewer round trips (no renames)      | - Default on sr_sarra.               |
@@ -1078,7 +1078,7 @@ is set by the 'logrotate' parameter.  Log files older than <strong>logrotate</st
 <p><strong>chmod_log</strong> the permission bits to set on log files (default 0600 )</p>
 </li>
 </ul>
-<p>placement is as per: <code>XDG Open Directory Specication &lt;https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.rst&gt;</code>_ ) setting the XDG_CACHE_HOME environment variable.</p>
+<p>placement is as per: <code>XDG Open Directory Specication &lt;https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.md&gt;</code>_ ) setting the XDG_CACHE_HOME environment variable.</p>
 <h1 id="instances">INSTANCES</h1>
 <p>Sometimes one instance of a component and configuration is not enough to process &amp; send all available notifications.</p>
 <p><strong>instances      <integer>     (default:1)</strong></p>
@@ -1149,7 +1149,7 @@ The parts and their checksums are stored in the cache. Partitions can traverse
 the network separately, and in paralllel.  When files change, transfers are
 optimized by only sending parts which have changed.</p>
 <p>The <em>outlet</em> option allows the final output to be other than a post.<br />
-See <code>sr_cpump(1) &lt;sr_cpump.1.rst&gt;</code>_ for details.</p>
+See <code>sr_cpump(1) &lt;sr_cpump.1.md&gt;</code>_ for details.</p>
 <h2 id="-pbd-post_base_dir-optional">[-pbd|--post_base_dir <path>] (optional)</h2>
 <p>The <em>post_base_dir</em> option supplies the directory path that, when combined (or found) 
 in the given <em>path</em>, gives the local absolute path to the data file to be posted.
@@ -1393,7 +1393,7 @@ Some other available variables::</p>
   parent.msg.length       :  length of file or part
   parent.msg.in_partfile  :  T/F file temporary in part file
   parent.msg.local_url    :  url for reannouncement</p>
-<p>See the <code>Programming Guide &lt;Prog.rst&gt;</code>_ for more details.</p>
+<p>See the <code>Programming Guide &lt;Prog.md&gt;</code>_ for more details.</p>
 <h1 id="queue-saverestore">Queue Save/Restore</h1>
 <h2 id="sender-destination-unavailable">Sender Destination Unavailable</h2>
 <p>If the server to which the files are being sent is going to be unavailable for
@@ -1532,7 +1532,7 @@ directory.  The configuration files for an sr_subscribe configuration
 called <em>myflow</em> would be here:</p>
 <ul>
 <li>
-<p>linux: ~/.config/sarra/subscribe/myflow.conf (as per: <code>XDG Open Directory Specication &lt;https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.rst&gt;</code>_ ) </p>
+<p>linux: ~/.config/sarra/subscribe/myflow.conf (as per: <code>XDG Open Directory Specication &lt;https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.md&gt;</code>_ ) </p>
 </li>
 <li>
 <p>Windows: %AppDir%/science.gc.ca/sarra/myflow.conf , this might be:
@@ -1562,21 +1562,21 @@ look in the <em>plugins</em> directory in the users config tree, then in the sit
 directory, then in the sarracenia package itself, and finally it will look remotely.</p>
 <h1 id="see-also">SEE ALSO</h1>
 <p><strong>User Commands:</strong></p>
-<p><code>sr_subscribe(1) &lt;sr_subscribe.1.rst&gt;</code>_ - Select and Conditionally Download Posted Files</p>
-<p><code>sr_post(1) &lt;sr_post.1.rst&gt;</code>_ - post announcemensts of specific files.</p>
-<p><code>sr_watch(1) &lt;sr_watch.1.rst&gt;</code>_ - post that loops, watching over directories.</p>
-<p><code>sr_sender(1) &lt;sr_sender.1.rst&gt;</code>_ - subscribes to messages pointing at local files, and sends them to remote systems and reannounces them there.</p>
-<p><code>sr_report(1) &lt;sr_report.1.rst&gt;</code>_ - process report messages.</p>
+<p><code>sr_subscribe(1) &lt;sr_subscribe.1.md&gt;</code>_ - Select and Conditionally Download Posted Files</p>
+<p><code>sr_post(1) &lt;sr_post.1.md&gt;</code>_ - post announcemensts of specific files.</p>
+<p><code>sr_watch(1) &lt;sr_watch.1.md&gt;</code>_ - post that loops, watching over directories.</p>
+<p><code>sr_sender(1) &lt;sr_sender.1.md&gt;</code>_ - subscribes to messages pointing at local files, and sends them to remote systems and reannounces them there.</p>
+<p><code>sr_report(1) &lt;sr_report.1.md&gt;</code>_ - process report messages.</p>
 <p><strong>Pump Adminisitrator Commands:</strong></p>
-<p><code>sr_shovel(8) &lt;sr_shovel.8.rst&gt;</code>_ - process messages (no downloading.)</p>
-<p><code>sr_winnow(8) &lt;sr_winnow.8.rst&gt;</code>_ - a shovel with cache on, to winnow wheat from chaff.</p>
-<p><code>sr_sarra(8) &lt;sr_sarra.8.rst&gt;</code>_ - Subscribe, Acquire, and ReAdvertise tool.</p>
-<p><code>sr_audit(8) &lt;sr_audit.8.rst&gt;</code>_ - Monitoring daemon, audits running configurations, restarts missing instances.</p>
-<p><code>sr_log2save(8) &lt;sr_log2save.8.rst&gt;</code>_ - Convert logfile lines to .save Format for reload/resend.</p>
+<p><code>sr_shovel(8) &lt;sr_shovel.8.md&gt;</code>_ - process messages (no downloading.)</p>
+<p><code>sr_winnow(8) &lt;sr_winnow.8.md&gt;</code>_ - a shovel with cache on, to winnow wheat from chaff.</p>
+<p><code>sr_sarra(8) &lt;sr_sarra.8.md&gt;</code>_ - Subscribe, Acquire, and ReAdvertise tool.</p>
+<p><code>sr_audit(8) &lt;sr_audit.8.md&gt;</code>_ - Monitoring daemon, audits running configurations, restarts missing instances.</p>
+<p><code>sr_log2save(8) &lt;sr_log2save.8.md&gt;</code>_ - Convert logfile lines to .save Format for reload/resend.</p>
 <p><strong>Formats:</strong></p>
-<p><code>sr_post(7) &lt;sr_post.7.rst&gt;</code>_ - The format of announcement messages.</p>
-<p><code>sr_report(7) &lt;sr_report.7.rst&gt;</code>_ - the format of report messages.</p>
-<p><code>sr_pulse(7) &lt;sr_pulse.7.rst&gt;</code>_ - The format of pulse messages.</p>
+<p><code>sr_post(7) &lt;sr_post.7.md&gt;</code>_ - The format of announcement messages.</p>
+<p><code>sr_report(7) &lt;sr_report.7.md&gt;</code>_ - the format of report messages.</p>
+<p><code>sr_pulse(7) &lt;sr_pulse.7.md&gt;</code>_ - The format of pulse messages.</p>
 <p><strong>Home Page:</strong></p>
 <p><code>https://github.com/MetPX/ &lt;https://github.com/MetPX&gt;</code>_ - sr_subscribe is a component of MetPX-Sarracenia, the AMQP based data pump.</p>
 <h1 id="sundew-compatibility-options">SUNDEW COMPATIBILITY OPTIONS</h1>
