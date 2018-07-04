@@ -1,2 +1,2 @@
-# asciidoctest
-asciidoctest
+# doctest
+doctest
