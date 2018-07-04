@@ -67,7 +67,7 @@
 <li><a href="#configuration-files">CONFIGURATION FILES</a></li>
 <li><a href="#see-also">SEE ALSO</a></li>
 <li><a href="#sundew-compatibility-options">SUNDEW COMPATIBILITY OPTIONS</a><ul>
-<li><a href="#destfn_script-defaultnone">destfn_script lt;script&gt; (default:None)</a></li>
+<li><a href="#destfn_script-defaultnone">destfn_script &lt;script&gt; (default:None)</a></li>
 <li><a href="#filename-defaultwhatfn">filename <keyword> (default:WHATFN)</a></li>
 <li><a href="#field-replacements">Field Replacements</a></li>
 <li><a href="#deprecated-settings">DEPRECATED SETTINGS</a></li>
@@ -1581,7 +1581,7 @@ directory, then in the sarracenia package itself, and finally it will look remot
 <p><code>https://github.com/MetPX/ &lt;https://github.com/MetPX&gt;</code>_ - sr_subscribe is a component of MetPX-Sarracenia, the AMQP based data pump.</p>
 <h1 id="sundew-compatibility-options">SUNDEW COMPATIBILITY OPTIONS</h1>
 <p>For compatibility with sundew, there are some additional delivery options which can be specified.</p>
-<h2 id="destfn_script-defaultnone">destfn_script lt;script&gt; (default:None)</h2>
+<h2 id="destfn_script-defaultnone">destfn_script &lt;script&gt; (default:None)</h2>
 <p>This option defines a script to be run when everything is ready
 for the delivery of the product.  The script receives the sr_sender class
 instance.  The script takes the parent as an argument, and for example, any
